@@ -1,0 +1,10 @@
+{
+  "name": "pi-global-context-limit",
+  "version": "0.1.0",
+  "description": "Global context limit extension for pi - caps all models to a configurable context window size",
+  "keywords": ["pi", "pi-package", "pi-extension", "context", "limit", "compaction"],
+  "license": "MIT",
+  "pi": {
+    "extensions": ["./index.ts"]
+  }
+}
