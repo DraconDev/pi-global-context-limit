@@ -12,7 +12,7 @@ Add to `~/.pi/agent/settings.json`:
 
 ```json
 {
-  "globalContextLimit": 100000
+  "globalContextLimit": 200000
 }
 ```
 
@@ -33,10 +33,18 @@ Add to `~/.pi/agent/settings.json`:
 
 Compaction triggers when `contextTokens > contextWindow - reserveTokens`. With a global limit:
 
-- 200K model capped to 100K → compaction at ~84K tokens (instead of ~184K)
-- 1M model capped to 100K → compaction at ~84K tokens (instead of ~984K)
+- 200K model capped to 200K → compaction at ~168K tokens (no change)
+- 1M model capped to 200K → compaction at ~168K tokens (instead of ~984K)
+- 128K model capped to 200K → compaction at ~112K tokens (no change, already under limit)
 
 ## Files
 
-- `global-context-limit.ts` - Extension source
+- `index.ts` - Extension source
 - `README.md` - This file
+- `LICENSE` - MIT license
+
+## Install
+
+```bash
+pi install git:github.com/DraconDev/pi-global-context-limit
+```
